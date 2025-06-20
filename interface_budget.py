@@ -306,7 +306,7 @@ def appliquer_filtres(operations):
     
     return operations_filtrees
 
-# Réinitialise les filtres à leurs valeurs par défaut et met à jour l'affichage
+# Réinitialise les filtres à leurs valeurs par défaut et met à jour l'affichage (pas de bouton reset implanté pour le moment)
 def reset_filtres():
     var_filtre_type.set("Tous")
     var_filtre_categorie.set("Toutes")
