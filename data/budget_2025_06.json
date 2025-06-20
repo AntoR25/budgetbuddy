@@ -1,0 +1,86 @@
+[
+    {
+        "date": "2025-06-18T20:29:27.801144",
+        "type": "depense",
+        "categorie": "Santé",
+        "montant": 56.0,
+        "commentaire": "Crème pour le visage "
+    },
+    {
+        "date": "2025-06-18T20:32:02.293645",
+        "type": "depense",
+        "categorie": "NFT",
+        "montant": 5.0,
+        "commentaire": "Tête de singe en promo"
+    },
+    {
+        "date": "2025-06-18T20:55:31.831968",
+        "type": "revenu",
+        "categorie": "Salaire",
+        "montant": 1200.0,
+        "commentaire": "Toujours pas d'augmentation, j'ai le seum"
+    },
+    {
+        "date": "2025-06-18T21:03:34.570387",
+        "type": "revenu",
+        "categorie": "Prime",
+        "montant": 55.0,
+        "commentaire": "Je l'ai gagné en nettoyant les chiottes privée de mon patron"
+    },
+    {
+        "date": "2025-06-18T21:05:02.298913",
+        "type": "depense",
+        "categorie": "Loyer",
+        "montant": 300.0,
+        "commentaire": "Fichu proprio, il ne mérite pas cette argent "
+    },
+    {
+        "date": "2025-06-18T21:06:30.130762",
+        "type": "depense",
+        "categorie": "Transport",
+        "montant": 20.0,
+        "commentaire": "Abonement de bus "
+    },
+    {
+        "date": "2025-06-18T21:08:52.081973",
+        "type": "depense",
+        "categorie": "Don streamers",
+        "montant": 7.55,
+        "commentaire": "Besoin de la petite dose de dopamine "
+    },
+    {
+        "date": "2025-06-18T21:09:51.875989",
+        "type": "depense",
+        "categorie": "Cadeaux",
+        "montant": 50.0,
+        "commentaire": "Coffret parfum random pour sauver Noël"
+    },
+    {
+        "date": "2025-06-18T21:12:36.042543",
+        "type": "depense",
+        "categorie": "Abonnements",
+        "montant": 20.0,
+        "commentaire": "Orange, j'utilise jamais tout mes Go"
+    },
+    {
+        "date": "2025-06-18T21:13:51.090453",
+        "type": "depense",
+        "categorie": "Abonnements",
+        "montant": 25.0,
+        "commentaire": "Netflix, bientôt regardé tout le catalogue "
+    },
+    {
+        "date": "2025-06-18T21:19:05.231745",
+        "type": "depense",
+        "categorie": "Loisirs",
+        "montant": 100.0,
+        "commentaire": "Activité secrète ++"
+    },
+    {
+        "date": "2025-06-18T21:20:52.874026",
+        "type": "depense",
+        "categorie": "Jeux Steam",
+        "montant": 90.0,
+        "commentaire": "Mario kart, nintendo se fiche de nous "
+    }
+]
