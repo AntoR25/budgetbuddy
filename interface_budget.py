@@ -14,7 +14,6 @@ import os
 import shutil
 from datetime import datetime, timedelta
 from pathlib import Path # pour l'export excel 
-from PIL import Image, ImageTk
 from moteur_budget import (
     ajouter_operation,
     calculer_solde,
