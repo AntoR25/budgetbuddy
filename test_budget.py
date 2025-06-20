@@ -1,5 +1,5 @@
 import pytest
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from moteur_budget import (
     ajouter_operation,
@@ -13,10 +13,8 @@ from moteur_budget import (
 
 @pytest.fixture(autouse=True)
 def setup_and_teardown():
-    # Avant chaque test, on vide les données
     sauvegarder_donnees([])
     yield
-    # Après chaque test, on vide aussi
     sauvegarder_donnees([])
 
 def test_ajouter_operation():
@@ -28,7 +26,6 @@ def test_ajouter_operation():
     assert donnees[1]["montant"] == 200
 
 def test_calculer_solde():
-    # Reset déjà fait par le fixture
     ajouter_operation("revenu", "Bourse", 500)
     ajouter_operation("depense", "Transport", 100)
     solde = calculer_solde()
@@ -55,11 +52,41 @@ def test_filtrer_operations_par_date():
     resultats = filtrer_operations_par_date(hier, aujourd_hui)
     assert len(resultats) == 2
 
+def test_filtrage_date_aucun_resultat():
+    op = {"date": "2025-01-01T10:00:00", "type": "depense", "categorie": "Test", "montant": 25, "commentaire": ""}
+    sauvegarder_donnees([op])
+    resultats = filtrer_operations_par_date(date(2024, 1, 1), date(2024, 1, 2))
+    assert len(resultats) == 0
+
 def test_supprimer_operation():
     ajouter_operation("depense", "Loisir", 60)
     donnees = charger_donnees()
-    op_a_supprimer = donnees[0]  # opération complète (dictionnaire)
+    op_a_supprimer = donnees[0]
     
     supprimer_operation(op_a_supprimer)
     donnees_apres = charger_donnees()
     assert op_a_supprimer not in donnees_apres
+
+def test_ajout_operation_invalide():
+    with pytest.raises(TypeError):
+        ajouter_operation("revenu")  # manque d'arguments
+
+def test_solde_negatif():
+    ajouter_operation("depense", "Facture", 300)
+    solde = calculer_solde()
+    assert solde == -300
+
+def test_sauvegarde_et_chargement():
+    operations = [
+        {"date": "2025-06-20T12:00:00", "type": "revenu", "categorie": "Prime", "montant": 500, "commentaire": "Bonus"},
+        {"date": "2025-06-21T12:00:00", "type": "depense", "categorie": "Jeux", "montant": 60, "commentaire": "Steam"}
+    ]
+    sauvegarder_donnees(operations)
+    donnees = charger_donnees()
+    assert donnees == operations
+
+def test_operations_avec_commentaires():
+    ajouter_operation("depense", "Cadeau", 40, commentaire="Anniversaire")
+    donnees = charger_donnees()
+    assert donnees[0]["commentaire"] == "Anniversaire"
+
