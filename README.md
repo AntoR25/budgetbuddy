@@ -35,7 +35,7 @@ Structure du projet
 - moteur_budget.py : logique métier (gestion des opérations, calculs).
 - requirements.txt : liste des dépendances Python.
 - interface_budget.py : gère tout l'interface + page des objectifs
-- test_budget.py : tests effectué via pytest pour vérifier que les opérations fonctionne correctement 
+- test_budget.py : tests effectué via pytest pour vérifier que les opérations moteur fonctionne correctement 
 
 Contribution
 ------------
